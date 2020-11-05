@@ -58,9 +58,16 @@ class Person {
   }
 
   toString() {
-    console.log(`${this.name}, ${this.age}`)
+    return `${this.name}, ${this.age}`
   }
 }
+
+const kelsey = new Person('Kelsey', 29);
+kelsey.eat('Strawberries');
+console.log(kelsey.stomach);
+kelsey.poop();
+console.log(kelsey.stomach);
+console.log(kelsey.toString());
 
 /*
   TASK 2
@@ -101,7 +108,7 @@ class Car {
       }
     }
     if(this.tank === 0){
-      console.log(`I ran out of fuel at ${this.odometer} miles!`)
+      return `I ran out of fuel at ${this.odometer} miles!`
     }
   }
 }
@@ -126,7 +133,7 @@ class Lambdasian {
   }
 
   speak(){
-    console.log(`Hello, my name is ${this.name}, and I am from ${this.location}.`)
+    return `Hello, my name is ${this.name}, and I am from ${this.location}.`
   }
 }
 
@@ -152,11 +159,31 @@ class Instructor extends Lambdasian {
   }
 
   demo(subject){
-    console.log(`Today we are learning about ${subject}.`);
+    return `Today we are learning about ${subject}.`;
   }
 
   grade(student, subject){  
-    console.log(`${student.name} receives a perfect score on ${subject}.`);
+    return `${student.name} receives a perfect score on ${subject}.`;
+  }
+
+  adjustGrade(student){
+    let randomInteger = function() {
+      let min = Math.ceil(-20);
+      let max = Math.floor(20);
+      return Math.floor(Math.random() * (max - min) + min);
+    };
+
+    student.grade += randomInteger;
+
+    if(student.grade > 100){
+      student.grade = 100;
+    };
+
+    if(student.grade < 0){
+      student.grade = 0;
+    }
+
+    return `${student} has a grade of ${student.grade}%`
   }
 }
 
@@ -180,18 +207,19 @@ class Student extends Lambdasian {
     this.previousBackground = previousBackground;
     this.className = className;
     this.favSubjects = [favSubjects];
+    this.grade = 100;
   }
 
   listSubjects(){
-    console.log(`Loving ${this.favSubjects}!`);
+    return `Loving ${this.favSubjects}!`;
   }
 
   PRAssignment(subject){
-    console.log(`${Student.name} has submitted a PR assignment for ${subject}.`);
+    return `${Student.name} has submitted a PR assignment for ${subject}.`;
   }
 
   sprintChallenge(subject){
-    console.log(`${Student.name} has begun sprint challenge on ${subject}.`)
+    return `${Student.name} has begun sprint challenge on ${subject}.`
   }
 }
 
@@ -215,11 +243,11 @@ class ProjectManager extends Instructor {
   }
 
   standUp(channel){
-    console.log(`${this.name} announces to ${channel}, @channel standby times!`)
+    return `${this.name} announces to ${channel}, @channel standby times!`
   }
 
   debugsCode(student, subject){
-    console.log(`${this.name} debugs ${Student.name}'s code on ${subject}.`)
+    `${this.name} debugs ${Student.name}'s code on ${subject}.`
   }
 }
 
