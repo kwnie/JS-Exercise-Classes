@@ -62,12 +62,12 @@ class Person {
   }
 }
 
-const kelsey = new Person('Kelsey', 29);
-kelsey.eat('Strawberries');
-console.log(kelsey.stomach);
-kelsey.poop();
-console.log(kelsey.stomach);
-console.log(kelsey.toString());
+const person1 = new Person('Kelsey', 29);
+person1.eat('Strawberries');
+console.log(person1.stomach);
+person1.poop();
+console.log(person1.stomach);
+console.log(person1.toString());
 
 /*
   TASK 2
@@ -113,15 +113,15 @@ class Car {
   }
 }
 
-const subaru = new Car('Subaru', 27);
-subaru.fill(18);
-console.log(subaru.tank);
-subaru.drive(100);
-console.log(subaru.tank);
-console.log(subaru.odometer);
-subaru.drive(1000);
-console.log(subaru.tank);
-console.log(subaru.odometer)
+const car1 = new Car('Subaru', 27);
+car1.fill(18);
+console.log(car1.tank);
+car1.drive(100);
+console.log(car1.tank);
+console.log(car1.odometer);
+car1.drive(1000);
+console.log(car1.tank);
+console.log(car1.odometer)
 
 
 /*
@@ -144,9 +144,13 @@ class Lambdasian {
   }
 
   speak(){
-    return `Hello, my name is ${this.name}, and I am from ${this.location}.`
+    console.log(`Hello, my name is ${this.name}, and I am from ${this.location}.`)
   }
 }
+
+let lambdasian1 = new Lambdasian('Kelsey', 29, 'Vernal');
+lambdasian1.speak()
+
 
 /*
   TASK 4
