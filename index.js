@@ -167,18 +167,19 @@ lambdasian1.speak()
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor extends Lambdasian {
-  super(name, age, location, specialty, favLanguage, catchPhrase){
+  constructor(name, age, location, specialty, favLanguage, catchPhrase){
+    super(name, age, location);
     this.specialty = specialty;
     this.favLanguage = favLanguage;
     this.catchPhrase = catchPhrase;
   }
 
   demo(subject){
-    return `Today we are learning about ${subject}.`;
+    console.log(`Today we are learning about ${subject}.`);
   }
 
   grade(student, subject){  
-    return `${student.name} receives a perfect score on ${subject}.`;
+    console.log(`${student.name} receives a perfect score on ${subject}.`);
   }
 
   adjustGrade(student){
@@ -198,9 +199,14 @@ class Instructor extends Lambdasian {
       student.grade = 0;
     }
 
-    return `${student} has a grade of ${student.grade}%`
+    console.log(`${student} has a grade of ${student.grade}%`)
   }
 }
+
+let instructor1 = new Instructor('Nathan', 35, 'Oregon', 'Advanced Array Methods', 'PHP', 'Wear your masks, tell your loved ones you love them.')
+instructor1.demo('Classes');
+instructor1.grade(lambdasian1, 'Classes');
+instructor1.adjustGrade(lambdasian1);
 
 /*
   TASK 5
@@ -218,7 +224,8 @@ class Instructor extends Lambdasian {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student extends Lambdasian {  
-  super(name, age, location, previousBackground, className, favSubjects){
+  constructor(name, age, location, previousBackground, className, favSubjects){
+    super(name, age, location);
     this.previousBackground = previousBackground;
     this.className = className;
     this.favSubjects = [favSubjects];
@@ -238,6 +245,11 @@ class Student extends Lambdasian {
   }
 }
 
+let student1 = new Student('Kelsey', 29, 'Vernal', 'Stay-at-home Parent', 'WebPT24', 'JavaScript, CSS, HTML');
+student1.listSubjects();
+student1.PRAssignment('Classes');
+student1.sprintChallenge('JavaScript Fundamentals');
+
 /*
   TASK 6
     - Write a ProjectManager class extending Instructor.
@@ -252,7 +264,8 @@ class Student extends Lambdasian {
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 class ProjectManager extends Instructor {
-  super(name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor){
+  constructor(name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor){
+    super(name, age, location, specialty, favLanguage, catchPhrase);
     this.gradClassName = gradClassName;
     this.favInstructor = favInstructor;
   }
