@@ -108,10 +108,21 @@ class Car {
       }
     }
     if(this.tank === 0){
-      return `I ran out of fuel at ${this.odometer} miles!`
+      console.log(`I ran out of fuel at ${this.odometer} miles!`)
     }
   }
 }
+
+const subaru = new Car('Subaru', 27);
+subaru.fill(18);
+console.log(subaru.tank);
+subaru.drive(100);
+console.log(subaru.tank);
+console.log(subaru.odometer);
+subaru.drive(1000);
+console.log(subaru.tank);
+console.log(subaru.odometer)
+
 
 /*
   TASK 3
