@@ -58,7 +58,7 @@ class Person {
   }
 
   toString() {
-    `${this.name}, ${this.age}`
+    console.log(`${this.name}, ${this.age}`)
   }
 }
 
@@ -100,7 +100,7 @@ class Car {
         this.tank = 0;
       }
     }
-    if(this.tank <= 0){
+    if(this.tank === 0){
       console.log(`I ran out of fuel at ${this.odometer} miles!`)
     }
   }
@@ -126,7 +126,7 @@ class Lambdasian {
   }
 
   speak(){
-    return `Hello, my name is ${this.name}, and I am from ${this.location}.`
+    console.log(`Hello, my name is ${this.name}, and I am from ${this.location}.`)
   }
 }
 
@@ -152,11 +152,11 @@ class Instructor extends Lambdasian {
   }
 
   demo(subject){
-    return `Today we are learning about ${subject}.`;
+    console.log(`Today we are learning about ${subject}.`);
   }
 
   grade(student, subject){  
-    `${student.name} receives a perfect score on ${subject}.`;
+    console.log(`${student.name} receives a perfect score on ${subject}.`);
   }
 }
 
@@ -183,15 +183,15 @@ class Student extends Lambdasian {
   }
 
   listSubjects(){
-    return `Loving ${this.favSubjects}!`;
+    console.log(`Loving ${this.favSubjects}!`);
   }
 
   PRAssignment(subject){
-    `${Student.name} has submitted a PR assignment for ${subject}.`;
+    console.log(`${Student.name} has submitted a PR assignment for ${subject}.`);
   }
 
   sprintChallenge(subject){
-    `${Student.name} has begun sprint challenge on ${subject}.`
+    console.log(`${Student.name} has begun sprint challenge on ${subject}.`)
   }
 }
 
@@ -215,11 +215,11 @@ class ProjectManager extends Instructor {
   }
 
   standUp(channel){
-    return `${this.name} announces to ${channel}, @channel standby times!`
+    console.log(`${this.name} announces to ${channel}, @channel standby times!`)
   }
 
   debugsCode(student, subject){
-    return `${this.name} debugs ${Student.name}'s code on ${subject}.`
+    console.log(`${this.name} debugs ${Student.name}'s code on ${subject}.`)
   }
 }
 
