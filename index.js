@@ -183,6 +183,7 @@ class Instructor extends Lambdasian {
   }
 
   adjustGrade(student){
+
     let randomInteger = function() {
       let min = Math.ceil(-20);
       let max = Math.floor(20);
@@ -199,14 +200,13 @@ class Instructor extends Lambdasian {
       student.grade = 0;
     }
 
-    console.log(`${student} has a grade of ${student.grade}%`)
+    console.log(`${student.name} has a grade of ${student.grade}%`)
   }
 }
 
 let instructor1 = new Instructor('Nathan', 35, 'Oregon', 'Advanced Array Methods', 'PHP', 'Wear your masks, tell your loved ones you love them.')
 instructor1.demo('Classes');
 instructor1.grade(lambdasian1, 'Classes');
-instructor1.adjustGrade(lambdasian1);
 
 /*
   TASK 5
@@ -233,15 +233,15 @@ class Student extends Lambdasian {
   }
 
   listSubjects(){
-    return `Loving ${this.favSubjects}!`;
+    console.log(`Loving ${this.favSubjects}!`);
   }
 
   PRAssignment(subject){
-    return `${Student.name} has submitted a PR assignment for ${subject}.`;
+    console.log(`${this.name} has submitted a PR assignment for ${subject}.`);
   }
 
   sprintChallenge(subject){
-    return `${Student.name} has begun sprint challenge on ${subject}.`
+    console.log(`${this.name} has begun sprint challenge on ${subject}.`)
   }
 }
 
@@ -249,6 +249,9 @@ let student1 = new Student('Kelsey', 29, 'Vernal', 'Stay-at-home Parent', 'WebPT
 student1.listSubjects();
 student1.PRAssignment('Classes');
 student1.sprintChallenge('JavaScript Fundamentals');
+console.log(instructor1.adjustGrade(student1));
+console.log(instructor1.adjustGrade(student1));
+
 
 /*
   TASK 6
