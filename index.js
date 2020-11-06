@@ -183,13 +183,12 @@ class Instructor extends Lambdasian {
   }
 
   adjustGrade(student){
-
     let randomInteger = function() {
       let min = Math.ceil(-20);
       let max = Math.floor(20);
       return Math.floor(Math.random() * (max - min) + min);
-    };
-
+    };      
+    
     student.grade += randomInteger;
 
     if(student.grade > 100){
@@ -278,7 +277,7 @@ class ProjectManager extends Instructor {
   }
 
   debugsCode(student, subject){
-    `${this.name} debugs ${Student.name}'s code on ${subject}.`
+    `${this.name} debugs ${student.name}'s code on ${subject}.`
   }
 }
 
